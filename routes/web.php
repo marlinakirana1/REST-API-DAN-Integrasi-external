@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\UserController;
 use App\Http\Controller\ProdukController;
+use App\Http\Controller\ProfileController;
 
 
 /*
@@ -39,3 +40,15 @@ Route::get('/about                                                              
     ];
     return view('about', $data);
 });
+
+Route::get('/products', function () {
+    $products = App\Models\Product::all();
+    return view('products.index', ['products' => $products]);
+});
+
+Route::get('profile',function(){
+    $nama = "Marlina Kirana";
+    return view('profile.index', compact('nama'));
+});
+
+Route:: Resource(' /profile', App\Http\Controller\ProfileController::class);
