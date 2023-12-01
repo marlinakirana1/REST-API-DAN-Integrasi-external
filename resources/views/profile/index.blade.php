@@ -1,22 +1,31 @@
-<h1>Profil &#128112;</h1>
+<h1>Profile</h1>
     <hr>
-    <table border='0'>
-        @if($nama == 'Marlina')
-            <tr>
-                <td>Nama Saya :</td>
-                <td>{{ $nama }} </td>
-            </tr>
-        @endif
-    </table>
+    <table border ='0'
+    @if($nama =='Marlina Kirana')
 
-    <hr>
-    <h1>Contoh Penerapan
-        <br> Nama= Marlina Kirana
-        <br> Nama= Resa Meylani
-        <br> Nama= Insania Kamila
-     </head>
+    <tr>
+        <td> Nama Lengkap: </td>
+        <td> {{$nama}} </td>
+    </tr>
+    @else
+    <tr>
+        <td> Nama Lengkap: </td>
+        <td> tidak ada nama</td>
+    </tr>
+@endif
+</table>
+<hr>
+<h1>Contoh Pengulangan </h1>
+<table>
+@foreach(["nama"] as $data_array)
+    <tr>
+        <td> Nama </td>
+        <td> {{ $data_array }} </td>
+    </tr>
+    @endforeach
+</table>
 
-     <h1>Contoh forelse </h1>
+<h1>Contoh forelse </h1>
 <table>
     @forelse( ['nama'] as $data)
     <tr>
