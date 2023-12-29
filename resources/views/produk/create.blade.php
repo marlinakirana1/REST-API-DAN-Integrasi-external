@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <title>create produk</title>
     <body>
         <h2>create produk</h2>
